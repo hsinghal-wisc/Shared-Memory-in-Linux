@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<valgrindoutput>
+
+<protocolversion>4</protocolversion>
+<protocoltool>memcheck</protocoltool>
+
+<preamble>
+  <line>Memcheck, a memory error detector</line>
+  <line>Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.</line>
+  <line>Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info</line>
+  <line>Command: /tmp/tmpbepUxp/p/stats_client -c 800000000 -p 1 -k 918 -s 200000000</line>
+</preamble>
+
+<pid>13599</pid>
+<ppid>13596</ppid>
+<tool>memcheck</tool>
+
+<args>
+  <vargv>
+    <exe>/usr/bin/valgrind.bin</exe>
+    <arg>--show-reachable=yes</arg>
+    <arg>--xml=yes</arg>
+    <arg>--xml-file=/tmp/tmpbepUxp/p/0.xml</arg>
+  </vargv>
+  <argv>
+    <exe>/tmp/tmpbepUxp/p/stats_client</exe>
+    <arg>-c</arg>
+    <arg>800000000</arg>
+    <arg>-p</arg>
+    <arg>1</arg>
+    <arg>-k</arg>
+    <arg>918</arg>
+    <arg>-s</arg>
+    <arg>200000000</arg>
+  </argv>
+</args>
+
+<status>
+  <state>RUNNING</state>
+  <time>00:00:00:00.196 </time>
+</status>
+
+
+<status>
+  <state>FINISHED</state>
+  <time>00:00:00:51.173 </time>
+</status>
+
+<error>
+  <unique>0x0</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>32 bytes in 1 blocks are still reachable in loss record 1 of 2</text>
+    <leakedbytes>32</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2AB80</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x534D507</ip>
+      <obj>/lib/x86_64-linux-gnu/libc-2.19.so</obj>
+      <fn>tsearch</fn>
+      <dir>/build/eglibc-oGUzwX/eglibc-2.19/misc</dir>
+      <file>tsearch.c</file>
+      <line>280</line>
+    </frame>
+    <frame>
+      <ip>0x5047F6C</ip>
+      <obj>/lib/x86_64-linux-gnu/libpthread-2.19.so</obj>
+      <fn>check_add_mapping</fn>
+      <dir>/build/eglibc-oGUzwX/eglibc-2.19/nptl</dir>
+      <file>sem_open.c</file>
+      <line>201</line>
+    </frame>
+    <frame>
+      <ip>0x50480EE</ip>
+      <obj>/lib/x86_64-linux-gnu/libpthread-2.19.so</obj>
+      <fn>sem_open</fn>
+      <dir>/build/eglibc-oGUzwX/eglibc-2.19/nptl</dir>
+      <file>sem_open.c</file>
+      <line>278</line>
+    </frame>
+    <frame>
+      <ip>0x4E37D1F</ip>
+      <obj>/tmp/tmpbepUxp/p/libstats.so</obj>
+      <fn>stats_init</fn>
+    </frame>
+    <frame>
+      <ip>0x400D71</ip>
+      <obj>/tmp/tmpbepUxp/p/stats_client</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<error>
+  <unique>0x1</unique>
+  <tid>1</tid>
+  <kind>Leak_StillReachable</kind>
+  <xwhat>
+    <text>47 bytes in 1 blocks are still reachable in loss record 2 of 2</text>
+    <leakedbytes>47</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4C2AB80</ip>
+      <obj>/usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x5047F1B</ip>
+      <obj>/lib/x86_64-linux-gnu/libpthread-2.19.so</obj>
+      <fn>check_add_mapping</fn>
+      <dir>/build/eglibc-oGUzwX/eglibc-2.19/nptl</dir>
+      <file>sem_open.c</file>
+      <line>184</line>
+    </frame>
+    <frame>
+      <ip>0x50480EE</ip>
+      <obj>/lib/x86_64-linux-gnu/libpthread-2.19.so</obj>
+      <fn>sem_open</fn>
+      <dir>/build/eglibc-oGUzwX/eglibc-2.19/nptl</dir>
+      <file>sem_open.c</file>
+      <line>278</line>
+    </frame>
+    <frame>
+      <ip>0x4E37D1F</ip>
+      <obj>/tmp/tmpbepUxp/p/libstats.so</obj>
+      <fn>stats_init</fn>
+    </frame>
+    <frame>
+      <ip>0x400D71</ip>
+      <obj>/tmp/tmpbepUxp/p/stats_client</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
+
+<errorcounts>
+</errorcounts>
+
+<suppcounts>
+</suppcounts>
+
+</valgrindoutput>
+
